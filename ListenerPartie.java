@@ -65,7 +65,7 @@ extends MouseAdapter {
         Joueur j=this.partie.getTerr().getCorrectPlayers();
         try {
             PrintWriter pr=new PrintWriter(this.client.getOutputStream());
-            if(j!=null&&j.getNumero()==2) {
+            if(j!=null&&j.getNumero()==1) {
                 this.pnp.setProp(j);
                 int x=this.pnp.getX()/(this.partie.getWidth()/this.partie.getTerr().getCote());
                 int y=this.pnp.getY()/(this.partie.getHeight()/this.partie.getTerr().getCote());

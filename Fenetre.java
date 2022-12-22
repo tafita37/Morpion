@@ -7,6 +7,7 @@ import mpihaino.*;
 import wera.*;
 import back.*;
 import element.*;
+import java.util.*;
 
 public class Fenetre
 extends JFrame {
@@ -38,7 +39,10 @@ extends JFrame {
         this.p=new Partie(terr);
         this.p.setFenetre(this);
         if(etat.compareTo("client")==0) {
-            this.client=new Socket("localhost", 4999);
+            Scanner scan=new Scanner(System.in);
+            System.out.println("Entrez l'adresse ip du server");
+            String ip=scan.nextLine();
+            this.client=new Socket(ip, 4999);
             this.p.setS(client);
             this.setTitle("Client");
             for(int i=0; i<this.p.getPnp().length; i++) {
